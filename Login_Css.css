@@ -1,0 +1,160 @@
+*{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+html,body{
+  align-content: center;
+  justify-content: center;
+  background: darkgrey;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+}
+
+
+nav{
+  flex: 1;
+  text-align: right;
+}
+
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #555;
+}
+
+p{
+  color:#555;
+}
+
+.login{
+  width: 500px;
+  background: #013f7e;
+  border-radius: 10px;
+  padding: 
+  padding-top:12px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  margin:auto;
+}
+
+.login .title{
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 90px;
+  user-select: none;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  border-top:5px solid blanchedalmond;
+}
+.login form{
+  padding: 10px 30px 50px 30px;
+}
+.login form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  
+  position: relative;
+  justify-content: center;
+  display: flex;
+  
+  margin-bottom: 15px;
+}
+
+.login form .field input[type="text"]:focus,.login form .field input[type="password"]:focus,.field input[type="email"]:focus
+{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 20px;
+  padding-left: 20px;
+  box-shadow: 2px 1px 1px lightgrey;
+  border: 3px solid;
+  border-color: rgb(127, 255, 0);
+  border-radius:10px;
+  transition: all 0.3s ease;
+}
+.login form .field input
+{
+  height:90%;
+  width:75%;
+  font-size:15px;
+  padding-left:20px;
+  border:3px solid;
+  border-radius:10px;
+  border-color:#3b9cf7;
+}
+
+
+
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: white;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link a{
+  color: white;
+}
+form .field input[type="submit"]{
+  color:"";
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor:pointer;
+  border-color: gold;
+  transition: all 0.3s ease;
+  border-radius:10px;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+
+}
+form .field input[type="submit"]:hover{
+  background-color:white;
+}
+form .signup-link{
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  display:block;
+}
+form .pass-link a,
+form .signup-link a{
+  color: white;
+  text-decoration: none;
+  padding:5px;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <title>CONTACT US</title> 
+</head>
+<body>
+    <div id="another">
+        <div class="navbar">
+            <div class="logo">
+                <img src="TOY MART.jpg" alt="" width="100px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="ProductMain.html">PRODUCT</a></li>
+                    <li><a href="About.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="LoginPage.html">ACCOUNT</a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+           
+        </div>
+<div id="touch">
+         <form onsubmit="sendEmail(); reset();return false ;">
+             <h3>GET IN TOUCH</h3>
+             <input type="text" id="name" placeholder="YOUR NAME" required>
+             <input type="email" id="email" placeholder="YOUR EMAIL" required>
+             <input type="phone" id="phone" placeholder="YOUR PHONE" required>
+             <textarea  id="message" cols="10" rows="4" placeholder="HOW CAN WE HELP U?"></textarea>
+             <button type="submit">SEND</button>
+
+         </form>
+     </div>
+</div>
+</div>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+     <script>
+         function sendEmail(){
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "storetoy24@gmail.com",
+    Password : "toystore@123",
+    To : 'storetoy24@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "This is the subject",
+    Body : "Name: "+document.getElementById("name").value
+    + "<br> Email: " +document.getElementById("email").value
+    + "<br> Phone no: "+document.getElementById("phone").value
+    + "<br> Message: "+document.getElementById("message").value
+}).then(
+  message => alert("MESSAGE SENT SUCCESSFULLY")
+);
+         }
+         
+        function validation() {
+        var a=document.getElementById("phone").value;
+          let pattern=/^[0-9]+$/mgi;
+        if((pattern.test(a))){ 
+       
+       
+       
+          if((a.length<10) || (a.length>10)) {
+        document.getElementById("phone").innerHTML="Phone number must be of 10 digits";
+          return false;
+          }
+          else{
+            return true;
+          }
+      
+      }
+       else {
+        document.getElementById("phone").innerHTML="Must contain digits only";
+         return false;
+       }
+      
+      }
+     </script>
+</body>
+</html>

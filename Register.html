@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Register | Toy Store</title>
+    <link rel="stylesheet" href="Register_CSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+  
+<body>
+  <div class="navbar">
+    <div class="logo">
+        <img src="TOY MART.jpg" alt="" width="100px">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="ProductMain.html">PRODUCT</a></li>
+            <li><a href="About.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="LoginPage.html">ACCOUNT</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
+   </div>
+
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form onsubmit="return validation()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter your first name" autocomplete="off" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" placeholder="Enter your last name" autocomplete="off" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" id="mail" autocomplete="off" required>
+            <span id="email" style="color: red;"></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number"  id="phone"  autocomplete="off" required>
+            <span id="number" style="color: red;"></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="password" id="password" onkeyup='check();' minlength="8"  / autocomplete="off" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" name="confirm_password" id="confirm_password"  onkeyup='check();'  minlength="8" / autocomplete="off" required>
+            <span id='message'></span>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" id="submit" value="Register"> <a href="LoginPage.html">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>var check = function() 
+  {
+    var space="";
+     if (document.getElementById('password').value !=
+       document.getElementById('confirm_password').value && (document.getElementById('confirm_password').value) != space ) {
+         document.getElementById('message').style.color = 'red';
+       document.getElementById('message').innerHTML = 'Password Mismatch';
+       document.getElementById('submit').disabled=true;
+     } else if((document.getElementById('confirm_password').value) != space) 
+     {document.getElementById('message').style.color = 'violet';
+       document.getElementById('message').innerHTML = 'Password Matched';
+      document.getElementById('submit').disabled=false;
+    }
+
+    
+}</script>
+
+<script>
+      function validation() {
+      var a=document.getElementById("phone").value;
+        let pattern=/^[0-9]+$/mgi;
+      if((pattern.test(a))){ 
+     
+     
+     
+        if((a.length<10) || (a.length>10)) {
+      document.getElementById("number").innerHTML="Phone number must be of 10 digits";
+        return false;
+        }
+        else{
+          return true;
+        }
+    
+    }
+     else {
+      document.getElementById("number").innerHTML="Must contain digits only";
+       return false;
+     }
+    
+    }
+   </script>
+
+</body>
+</html>
